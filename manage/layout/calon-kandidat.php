@@ -51,7 +51,7 @@
                                   array_push($arr,$res['id_lowongan']);
                                 }
                                 $ids = join(',',$arr);
-                                $filteredLoker = "SELECT * FROM pengajuan_cv WHERE id_lowongan in ($ids) AND status = 0";
+                                $filteredLoker = "SELECT * FROM pengajuan_cv WHERE id_lowongan in ('$ids') AND status = 0";
                                 $q = $pdo->prepare($filteredLoker);
                                 $q->execute();
                                 $result = $q->fetchAll();

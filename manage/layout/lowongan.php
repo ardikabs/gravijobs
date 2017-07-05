@@ -109,9 +109,9 @@
                         <tbody>
                           <?php
                              
-                              $sql = "SELECT * FROM lowongan_kerja WHERE id_lembaga=$id_lembaga";
+                              $sql = 'SELECT * FROM lowongan_kerja WHERE id_lembaga=:id_lembaga';
                               $q = $pdo->prepare($sql);
-                              $q->execute();
+                              $q->execute(array(':id_lembaga'=>$id_lembaga));
                               $result = $q->fetchAll();
 
                             $date = date('Y-m-d');
