@@ -44,7 +44,7 @@
             <div class="ui container">
                 <div class="ui secondary inverted menu">
                     <div class="left item">
-                        <a href="/gravijobs">
+                        <a href="/">
                           <img class="ui tiny image" src="../assets/img/gravity.png">
                           </a>
                     </div>
