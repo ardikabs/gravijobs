@@ -51,27 +51,34 @@ if(isset($_POST['login']))
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 0 and $userRow['status'] == 1){
                 $_SESSION['user_session'] = $userRow['id_user'];
-                echo '<div class="ui container" style="margin-top: 1em;">
-                    <div class="ui error message">
-                        <p>Login Gagal. Akun anda masih belum aktif. Tunggu 2x24 jam !</p>
-                    </div>
-                </div>';
+
+                echo '<div class="ui vertical stripe segment" style="padding: 3em;">
+                        <div class="ui text container center aligned">
+                            <h1>LOGIN GAGAL</h1>
+                            <div class="ui header">Akun anda masih belum aktif. Mohon Tunggu 2x24 jam !</div>
+                            <a href="/">Kembali ke Halaman Utama</a>
+                        </div>
+                    </div>';
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 1 and $userRow['status'] == 2){
                 $_SESSION['user_session'] = $userRow['id_user'];
-                echo '<div class="ui container" style="margin-top: 1em;">
-                    <div class="ui error message">
-                        <p>Login Gagal. Akun anda telah di Suspend. Hubungi admin !.</p>
-                    </div>
-                </div>';
+                echo '<div class="ui vertical stripe segment" style="padding: 3em;">
+                        <div class="ui text container center aligned">
+                            <h1>LOGIN GAGAL</h1>
+                            <div class="ui header"> Akun anda telah di Suspend. Segera Hubungi admin !</div>
+                            <a href="/">Kembali ke Halaman Utama</a>
+                        </div>
+                    </div>';
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 1 and $userRow['status'] == 0){
                 $_SESSION['user_session'] = $userRow['id_user'];
-                echo '<div class="ui container" style="margin-top: 1em;">
-                    <div class="ui error message">
-                        <p>Login Gagal. Akun anda telah di BANNED.</p>
-                    </div>
-                </div>';
+                echo '<div class="ui vertical stripe segment" style="padding: 3em;">
+                        <div class="ui text container center aligned">
+                            <h1>LOGIN GAGAL</h1>
+                            <div class="ui header"> Akun anda telah di BANNED !</div>
+                            <a href="/">Kembali ke Halaman Utama</a>
+                        </div>
+                    </div>';
             }            
             return true;
         }
