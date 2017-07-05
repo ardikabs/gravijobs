@@ -1,5 +1,5 @@
 <?php
- if($_SERVER["REQUEST_METHOD"] == "POST"){
+ if(isset($_POST['action'])){
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $id_user = $_POST['id_user'];

@@ -10,7 +10,7 @@
         }
     }
 
-  if($_SERVER["REQUEST_METHOD"] == "POST"){
+  if(isset($_POST['name'])){
     $id_lowongan = $_POST['lowongan'];
     $id_lembaga = $_POST['lembaga'];
     $fullname = $_POST['name'];
