@@ -369,7 +369,6 @@
                             }
                             Database::disconnect();
                         ?>
-                      <div class="item kategori" data-value="other">Lainnya</div>
                       </div>
                   </div>
             </div>
