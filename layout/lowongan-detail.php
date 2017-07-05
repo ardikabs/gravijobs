@@ -1,7 +1,7 @@
 <?php
   
     function validatePhone($string) {
-        $numbersOnly = ereg_replace("[^0-9]", "", $string);
+        $numbersOnly = preg_replace("[^0-9]", "", $string);
         $numberOfDigits = strlen($numbersOnly);
         if ($numberOfDigits == 7 or $numberOfDigits == 10) {
             return true;
@@ -145,7 +145,6 @@
           $sql = 'INSERT INTO pengajuan_cv  (id_lowongan,nama_lengkap,email,nomor_hp,file_cv,file_identitas,file_foto) VALUES (?,?,?,?,?,?,?)';
           $q = $pdo->prepare($sql);
           $q->execute(array($id_lowongan,$fullname,$email,$nomor_hp,$cvUrl,$idUrl,$fotoUrl));
-          Database::disconnect();
           echo '<div class="ui container" style="margin-top: 1em;">
                   <div class="ui success message">
                       <p>Terima Kasih telah mengupload CV Anda. <br>Informasi akan dikirimkan melalui email setelah anda dinyatakan sesuai dengan persyaratan.</p>
@@ -181,6 +180,8 @@
         <?php
           }
         }
+      Database::disconnect();
+
       }  
     } 
     
