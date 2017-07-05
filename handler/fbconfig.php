@@ -18,6 +18,10 @@ require_once('Facebook/GraphSessionInfo.php');
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
 require_once( 'Facebook/HttpClients/FacebookCurl.php' );
 require_once( 'Facebook/HttpClients/FacebookCurlHttpClient.php' );
+require_once( 'Facebook/HttpClients/FacebookStreamHttpClient.php' );
+require_once( 'Facebook/HttpClients/FacebookStream.php' );
+
+
 require_once( 'Facebook/Entities/AccessToken.php' );
 require_once( 'Facebook/Entities/SignedRequest.php' );
 
@@ -30,8 +34,11 @@ use Facebook\FacebookRequestException;
 use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
 use Facebook\Entities\AccessToken;
+use Facebook\HttpClients\FacebookCurl;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\HttpClients\FacebookHttpable;
+use Facebook\HttpClients\FacebookStreamHttpClient;
+use Facebook\HttpClients\FacebookStream;
 
 // init app with app id and secret
 FacebookSession::setDefaultApplication('1938011066444605','5e125a856ff4ae09cce5393e061d6db3');
