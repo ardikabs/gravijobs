@@ -3,7 +3,7 @@
     function validatePhone($string) {
         $numbersOnly = preg_replace("[^0-9]", "", $string);
         $numberOfDigits = strlen($numbersOnly);
-        if ($numberOfDigits == 7 or $numberOfDigits == 10) {
+        if ($numberOfDigits <=12) {
             return true;
         } else {
             return false;
