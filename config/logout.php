@@ -2,6 +2,6 @@
    
    if(session_destroy()) {
      unset($_SESSION['user_session']);
-     header("Location:index.php");
+     header("Location:http://jobs.gravicodev.id");
    }
 ?>
