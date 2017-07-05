@@ -22,6 +22,13 @@ if(isset($_POST['login']))
 
     if ($qUser->rowCount() > 0){
         if (password_verify($pass, $userRow['password'])){
+            if(!empty($userInfo)){
+                $_SESSION['id_lembaga'] = $userInfo['id_lembaga'];
+                $_SESSION['user_name'] = $userInfo['nama_lengkap'];
+                $_SESSION['user_addr'] = $userInfo['alamat'];
+                $_SESSION['user_phone'] = $userInfo['nomor_hp'];
+                $_SESSION['user_id_number'] = $userInfo['nomor_identitas'];
+            }
 
             if($userRow['id_role'] == 1){
                 $_SESSION['admin_session'] = $userRow['id_user'];
@@ -34,14 +41,6 @@ if(isset($_POST['login']))
             <?php
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 1 and $userRow['status'] == 1){
-                if(!empty($userInfo)){
-                    $_SESSION['id_lembaga'] = $userInfo['id_lembaga'];
-                    $_SESSION['user_name'] = $userInfo['nama_lengkap'];
-                    $_SESSION['user_addr'] = $userInfo['alamat'];
-                    $_SESSION['user_phone'] = $userInfo['nomor_hp'];
-                    $_SESSION['user_id_number'] = $userInfo['nomor_identitas'];
-                }
-
                 $_SESSION['user_session'] = $userRow['id_user'];
                 ?>
                 <script type="text/javascript">
@@ -50,8 +49,8 @@ if(isset($_POST['login']))
                 <?php
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 0 and $userRow['status'] == 1){
-                $_SESSION['user_session'] = $userRow['id_user'];
-
+                session_unset();
+                session_destroy();
                 echo '<div class="ui vertical stripe segment" style="padding: 3em;">
                         <div class="ui text container center aligned">
                             <h1>LOGIN GAGAL</h1>
@@ -61,7 +60,8 @@ if(isset($_POST['login']))
                     </div>';
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 1 and $userRow['status'] == 2){
-                $_SESSION['user_session'] = $userRow['id_user'];
+                session_unset();
+                session_destroy();
                 echo '<div class="ui vertical stripe segment" style="padding: 3em;">
                         <div class="ui text container center aligned">
                             <h1>LOGIN GAGAL</h1>
@@ -71,7 +71,8 @@ if(isset($_POST['login']))
                     </div>';
             }
             else if($userRow['id_role'] == 2 and $userRow['valid'] == 1 and $userRow['status'] == 0){
-                $_SESSION['user_session'] = $userRow['id_user'];
+                session_unset();
+                session_destroy();
                 echo '<div class="ui vertical stripe segment" style="padding: 3em;">
                         <div class="ui text container center aligned">
                             <h1>LOGIN GAGAL</h1>

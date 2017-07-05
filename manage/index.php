@@ -27,7 +27,7 @@
 
     if (!isset($_SESSION['user_session'])){
        if(session_destroy()) {
-         unset($_SESSION['user_session']);
+         session_unset();
           ?>
             <script type="text/javascript">
             window.location.href = 'http://jobs.gravicodev.id/';
