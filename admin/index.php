@@ -22,15 +22,15 @@
 
 <body>
 <?php
-    include '../config/dbconfig.php';
-    include '../config/admin_session.php';
+    include ('../config/dbconfig.php');
+    include ('../config/admin_session.php');
 
     if (!isset($_SESSION['admin_session'])){
        if(session_destroy()) {
          unset($_SESSION['admin_session']);
           ?>
             <script type="text/javascript">
-            window.location.href = 'http://localhost:8080/gravijobs';
+            window.location.href = 'http://jobs.gravicodev.id/';
             </script>
           <?php
        }
@@ -115,7 +115,7 @@
                       $p = $_GET['p'];
 
                     if($p == "logout"){
-                        include '../config/admin_logout.php';
+                        include ('../config/admin_logout.php');
                     }
                     else{
 
@@ -132,7 +132,7 @@
 
               }
               else {
-                    include 'layout/request-account.php';
+                    include ('layout/request-account.php');
               }
         ?>   
     </div>

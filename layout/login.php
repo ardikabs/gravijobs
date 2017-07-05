@@ -37,7 +37,7 @@ if(isset($_POST['login']))
 
                 ?>
                 <script type="text/javascript">
-                    window.location.href = 'http://localhost:8080/gravijobs/admin';
+                    window.location.href = 'http://jobs.gravicodev.id/admin';
                 </script>
             <?php
             }
@@ -45,7 +45,7 @@ if(isset($_POST['login']))
                 $_SESSION['user_session'] = $userRow['id_user'];
                 ?>
                 <script type="text/javascript">
-                window.location.href = 'http://localhost:8080/gravijobs/manage';
+                window.location.href = 'http://jobs.gravicodev.id/manage';
                 </script>
                 <?php
             }
@@ -126,7 +126,7 @@ if(isset($_POST['login']))
         </br>
         <div class="ui horizontal divider">Atau</div>
         </br>
-        <a href="http://localhost:8080/gravijobs/handler/fbconfig.php" title="Signup with facebook">
+        <a href="http://jobs.gravicodev.id/handler/fbconfig.php" title="Signup with facebook">
         <button class="ui fluid facebook button"><i class="facebook icon"></i>Masuk dengan Facebook</button>
         </a>
         </br>

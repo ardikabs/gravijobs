@@ -22,8 +22,8 @@
 
 <body>
 <?php
-    include '../config/dbconfig.php';
-    include '../config/session.php';
+    include ('../config/dbconfig.php');
+    include ('../config/session.php');
 
     if (!isset($_SESSION['user_session'])){
        if(session_destroy()) {
@@ -83,7 +83,7 @@
                       $p = $_GET['p'];
 
                     if($p == "logout"){
-                        include '../config/logout.php';
+                        include ('../config/logout.php');
                     }
                     else{
 
@@ -91,7 +91,7 @@
 
                           include($pages_dir.'/'.$p.'.php');
                       }else {
-                          include '../handler/404.php';
+                          include ('../handler/404.php');
                       }
 
                     }
@@ -100,7 +100,7 @@
 
               }
               else {
-                    include 'layout/lowongan.php';
+                    include ('layout/lowongan.php');
               }
         ?>   
     </div>

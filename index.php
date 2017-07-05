@@ -23,8 +23,8 @@
 	
 
 <?php 
-    include 'config/dbconfig.php';
-    include 'config/session.php';
+    include ('config/dbconfig.php');
+    include ('config/session.php');
       $pages_dir = 'layout';		
 
       if (!empty($_GET['p'])){
@@ -33,11 +33,11 @@
 	          $p = $_GET['p'];
 
             if($p == "logout"){
-              include 'config/logout.php';
+              include ('config/logout.php');
             }
             else{
               if($p != "login" && $p!= "register"){
-                  include '/static/header.php';     
+                  include ('/static/header.php');     
               }
 
 
@@ -45,20 +45,20 @@
 
                   include($pages_dir.'/'.$p.'.php');
               }else {
-                    include 'handler/404.php';
+                    include ('handler/404.php');
               }
 
               if($p != "login" && $p!= "register"){
-               include '/static/footer.php';         
+               include ('/static/footer.php');         
               }              
             }
 
       }
 
       else {
-    			include '/static/header.php';			
+    			include ('/static/header.php');			
           include($pages_dir.'/home.php');
-          include '/static/footer.php';        	
+          include ('/static/footer.php');        	
 
       }
 ?>
