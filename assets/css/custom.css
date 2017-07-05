@@ -1,0 +1,52 @@
+body{
+
+}
+
+#googleMap {
+    width:100%;
+    height:400px;
+}
+
+#content-login-regis{
+    max-width: 500px;
+}
+
+.ui.vertical.stripe h3 {
+    font-size: 2em;
+}
+
+.ui.vertical.stripe p {
+    font-size: 1.33em;
+}
+
+.ui[class*="center aligned"].container{
+  padding:1.5em;
+}
+
+.quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.quote.stripe.segment {
+    padding: 0em;
+}
+
+.ui.table.add-cv{
+	border:0;
+	border-radius:0;
+}
+
+#height-custom {
+  height: 215px;
+  max-height: 500px;
+  border-radius: 0; 
+}
+
+#table-info-custom{
+	padding:0;
+}
+
+.ui.table.add-cv tr td {
+	border-top:0;
+}
