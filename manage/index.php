@@ -30,7 +30,7 @@
          unset($_SESSION['user_session']);
           ?>
             <script type="text/javascript">
-            window.location.href = 'http://localhost:8080/gravijobs';
+            window.location.href = 'http://jobs.gravicodev.id/';
             </script>
           <?php
        }
