@@ -37,7 +37,7 @@
             }
             else{
               if($p != "login" && $p!= "register"){
-                  include ('/static/header.php');     
+                  include ('static/header.php');     
               }
 
 
@@ -49,16 +49,16 @@
               }
 
               if($p != "login" && $p!= "register"){
-               include ('/static/footer.php');         
+               include ('static/footer.php');         
               }              
             }
 
       }
 
       else {
-    			include ('/static/header.php');			
+    			include ('static/header.php');			
           include($pages_dir.'/home.php');
-          include ('/static/footer.php');        	
+          include ('static/footer.php');        	
 
       }
 ?>
