@@ -37,13 +37,15 @@ use Facebook\HttpClients\FacebookHttpable;
 FacebookSession::setDefaultApplication('1938011066444605','5e125a856ff4ae09cce5393e061d6db3');
 
 // login helper with redirect_uri
-    $helper = new FacebookRedirectLoginHelper('http://jobs.gravicodev.id/handler/fbconfig.php' );
+$helper = new FacebookRedirectLoginHelper('http://jobs.gravicodev.id/handler/fbconfig.php' );
 try {
   $session = $helper->getSessionFromRedirect();
 } catch( FacebookRequestException $ex ) {
   // When Facebook returns an error
+  echo $ex->getMessage();
 } catch( Exception $ex ) {
   // When validation fails or other local issues
+  echo $ex->getMessage();
 }
 
 
